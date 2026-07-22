@@ -1,7 +1,13 @@
-const config = {
+/*
+=========================================
+ROMI TRADERS
+PostCSS Configuration
+=========================================
+*/
+
+module.exports = {
   plugins: {
-    "@tailwindcss/postcss": {}
+    tailwindcss: {},
+    autoprefixer: {}
   }
 };
-
-export default config;
