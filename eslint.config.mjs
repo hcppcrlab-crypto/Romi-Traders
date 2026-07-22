@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
+
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
@@ -10,14 +11,20 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends(
+    "next/core-web-vitals",
+    "next/typescript"
+  ),
   {
     ignores: [
-      "node_modules/**",
       ".next/**",
-      "out/**",
+      "node_modules/**",
+      "coverage/**",
       "dist/**",
-      "coverage/**"
+      "build/**",
+      "out/**",
+      "public/uploads/**",
+      "public/images/uploads/**"
     ]
   },
   {
@@ -25,17 +32,42 @@ const eslintConfig = [
       "no-console": [
         "warn",
         {
-          allow: ["warn", "error"]
+          allow: [
+            "warn",
+            "error"
+          ]
         }
       ],
-      "no-unused-vars": "off",
+
+      "no-debugger": "error",
+
+      "prefer-const": "error",
+
+      "no-var": "error",
+
+      "object-shorthand": "error",
+
+      "prefer-template": "error",
+
+      "eqeqeq": [
+        "error",
+        "always"
+      ],
+
+      "curly": [
+        "error",
+        "all"
+      ],
+
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
-          "argsIgnorePattern": "^_",
-          "varsIgnorePattern": "^_"
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_"
         }
-      ]
+      ],
+
+      "@typescript-eslint/no-explicit-any": "warn"
     }
   }
 ];
