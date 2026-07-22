@@ -1,40 +1,125 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ES2022"
     ],
+
     "allowJs": false,
+
     "skipLibCheck": true,
+
     "strict": true,
-    "noEmit": true,
+
+    "noImplicitAny": true,
+
+    "strictNullChecks": true,
+
+    "strictFunctionTypes": true,
+
+    "strictBindCallApply": true,
+
+    "strictPropertyInitialization": true,
+
+    "noImplicitThis": true,
+
+    "alwaysStrict": true,
+
+    "noUnusedLocals": false,
+
+    "noUnusedParameters": false,
+
+    "noFallthroughCasesInSwitch": true,
+
+    "forceConsistentCasingInFileNames": true,
+
     "esModuleInterop": true,
+
     "module": "ESNext",
+
     "moduleResolution": "Bundler",
+
     "resolveJsonModule": true,
+
     "isolatedModules": true,
+
     "jsx": "preserve",
+
     "incremental": true,
+
     "plugins": [
       {
         "name": "next"
       }
     ],
+
     "baseUrl": ".",
+
     "paths": {
       "@/*": [
         "./*"
+      ],
+
+      "@/app/*": [
+        "./app/*"
+      ],
+
+      "@/components/*": [
+        "./components/*"
+      ],
+
+      "@/lib/*": [
+        "./lib/*"
+      ],
+
+      "@/types/*": [
+        "./types/*"
+      ],
+
+      "@/prisma/*": [
+        "./prisma/*"
+      ],
+
+      "@/public/*": [
+        "./public/*"
+      ],
+
+      "@/styles/*": [
+        "./styles/*"
+      ],
+
+      "@/hooks/*": [
+        "./hooks/*"
+      ],
+
+      "@/store/*": [
+        "./store/*"
+      ],
+
+      "@/services/*": [
+        "./services/*"
+      ],
+
+      "@/utils/*": [
+        "./utils/*"
       ]
-    }
+    },
+
+    "types": [
+      "node"
+    ]
   },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
+
   "exclude": [
     "node_modules"
   ]
